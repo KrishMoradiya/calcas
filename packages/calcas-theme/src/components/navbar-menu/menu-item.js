@@ -3,68 +3,162 @@ import React from 'react';
 
 const items = [
     {
-        label: "Home",
+        label: "Insurance",
         key: "/",
-        icon: <HomeOutlined/>
-    },
-    {
-        label: "About us",
-        key: "/about-us",
-        icon: <HomeOutlined/>
-    },
-    {
-        key: 'sub1',
-        label: 'Services',
         icon: <HomeOutlined/>,
         children: [
             {
                 label: "Auto",
                 key: "/auto",
-                icon: <HomeOutlined color='primary' sx={{display:'flex',alignItems:'center'}} />,
+                icon: <HomeOutlined/>,
                 children: [
                     {
-                        label: "Auto",
-                        key: "/",
+                        label:"Auto",
+                        key: "/auto"
                     },
                     {
-                        label: "Motorcycle",
-                        key: "/about-us",
+                        label:"Motorcycle",
+                        key: "/motorcycle"
                     },
                     {
-                        label: "Classic car",
-                        key: "/about-us",
+                        label:"Classic car",
+                        key: "/classic-car"
                     },
                     {
-                        label: "RV",
-                        key: "/about-us",
+                        label:"RV",
+                        key: "/rv"
+                    },
+                    {
+                        label:"Mexico Auto",
+                        key: "/mexico-auto"
                     },
                 ]
             },
             {
                 label: "Property",
-                key: "/about-us",
-                icon: <BookOutlined color='primary' sx={{display:'flex',alignItems:'center'}} />,
+                key: "/property",
+                icon: <BookOutlined/>,
                 children: [
                     {
-                        label: "Home",
-                        key: "/",
+                        label:"Home",
+                        key: "/auto"
                     },
                     {
-                        label: "Condo",
-                        key: "/about-us",
+                        label:"Condo",
+                        key: "/motorcycle"
                     },
                     {
-                        label: "Renters",
-                        key: "/about-us",
+                        label:"Renters",
+                        key: "/classic-car"
+                    },
+                    {
+                        label:"Mobile Home",
+                        key: "/rv"
+                    },
+                    {
+                        label:"Earthquake",
+                        key: "/mexico-auto"
+                    },
+                    {
+                        label:"Flood",
+                        key: "/mexico-auto"
+                    },
+                    {
+                        label:"Mexico Home",
+                        key: "/mexico-auto"
                     },
                 ]
             },
-        ],
+            {
+                label: "More",
+                key: "/more",
+                icon: <HomeOutlined/>,
+                children: [
+                    {
+                        label:"Umbrella",
+                        key: "/auto"
+                    },
+                    {
+                        label:"Pet",
+                        key: "/motorcycle"
+                    },
+                    {
+                        label:"Boat",
+                        key: "/classic-car"
+                    },
+                    {
+                        label:"Snow Mobile",
+                        key: "/rv"
+                    },
+                    {
+                        label:"Mexico watercraft",
+                        key: "/mexico-auto"
+                    },
+                    {
+                        label:"All Other",
+                        key: "/mexico-auto"
+                    },
+                ]
+            }
+        ]
     },
     {
-        label: "Blogs",
-        key: "/blogs",
-        icon: <BookOutlined />
+        label: "Claims",
+        key: "/",
+        icon: <BookOutlined/>,
+        children: [
+            {
+                label: "Claim 1",
+                key: "/auto",
+                icon: <HomeOutlined/>,
+                children: [
+                    {
+                        label:"claim 1",
+                        key: "/auto"
+                    },
+                    {
+                        label:"claim 2",
+                        key: "/motorcycle"
+                    },
+                    {
+                        label:"claim 3",
+                        key: "/classic-car"
+                    }
+                ]
+            },
+            {
+                label: "More",
+                key: "/more",
+                icon: <HomeOutlined/>,
+                children: [
+                    {
+                        label:"Umbrella",
+                        key: "/auto"
+                    },
+                    {
+                        label:"Pet",
+                        key: "/motorcycle"
+                    },
+                    {
+                        label:"Boat",
+                        key: "/classic-car"
+                    },
+                    {
+                        label:"Snow Mobile",
+                        key: "/rv"
+                    },
+                    {
+                        label:"Mexico watercraft",
+                        key: "/mexico-auto"
+                    },
+                    {
+                        label:"All Other",
+                        key: "/mexico-auto"
+                    },
+                ]
+            }
+        ]
     },
+
 ];
 export default items;
