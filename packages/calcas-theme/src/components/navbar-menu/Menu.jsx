@@ -54,13 +54,9 @@ const CustomMenu = (props) => {
                     anchorOrigin={origin.anchor}
                     transformOrigin={origin.transform}
                 >
-                        {/*<Paper component="section" sx={{ border: '1px dashed grey',maxWidth:'fit-content' }}>*/}
-                            <MenuItem sx={{width:'700px',height:'200px'}}>
-                            <NestedMenu item={menuItemList.children} />
-                            </MenuItem>
-                        {/*</Paper>*/}
+                    {/*<NestedMenu item={menuItemList.children} />*/}
                         
-                        {/* {
+                        {
                             menuItemList.children.map((menuItem, index) => {
                                 console.log(menuItem);
                                 return (menuItem.children === undefined)?
@@ -71,7 +67,7 @@ const CustomMenu = (props) => {
                                     ) :
                                     <div><CustomMenu menuItemList={menuItem} origin={{anchor:anchorOrigin,transform:transformOrigin}} key={index} /></div>
                             })
-                        } */}
+                        }
                     </Menu>
 
         </>

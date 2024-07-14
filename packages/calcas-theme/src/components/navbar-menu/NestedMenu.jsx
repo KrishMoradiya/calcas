@@ -18,8 +18,8 @@ function NestedMenu(props) {
           mixBlendMode:'normal'
         }}
       >
-        <Box component="section" sx={{  mx: 6,my: 4 }}>
-          <Box component="section" display="flex" justifyContent={"space-evenly"}>
+        <Box sx={{  mx: 6,my: 4 }}>
+          <Box display="flex" justifyContent={"space-evenly"}>
             {  
               item.map((item, index) =>{
                 return (
