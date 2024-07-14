@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-
-import React from 'react';
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -30,6 +28,7 @@ export const Navbar = (props) => {
 
     const handleMenuClick = (event) => {
         setAnchorEl(event.currentTarget);
+        console.log(event.currentTarget);
     };
 
     const handleClose = () => {
@@ -58,15 +57,19 @@ export const Navbar = (props) => {
                                               MenuListProps={{ onMouseLeave: handleClose }}>
                                             <Box sx={{ padding: 2 }}>
                                                 <Grid container spacing={2}>
-                                                    {Object.keys(sections).map((section) => (
-                                                        <Grid item xs={12} sm={4} key={section}>
-                                                            <Typography variant="subtitle1" gutterBottom color='primary'>{section}</Typography>
-                                                            <Divider />
-                                                            {sections[section].map((item) => (
-                                                                <CustomMenuItem itemLabel={item} handleClose={handleClose} />
-                                                            ))}
-                                                        </Grid>
-                                                    ))}
+                                                    {
+                                                        navItems.children && navItems.children.map((menuSection, index) => {
+                                                            <Grid item xs={12} sm={4} key={index}>
+                                                                <Typography variant="subtitle1" gutterBottom color='primary'>{menuSection.label}</Typography>
+                                                                <Divider />
+                                                                {
+                                                                    menuSection.children && menuSection.children.map((menuSectionItem, index) => {
+                                                                        <CustomMenuItem itemLabel={menuSectionItem.label} handleClose={handleClose} key={index} />
+                                                                    })
+                                                                }
+                                                            </Grid>
+                                                        })
+                                                    }
                                                 </Grid>
                                             </Box>
                                         </Menu>
@@ -76,24 +79,6 @@ export const Navbar = (props) => {
                     }
                     <Button variant="contained" color="primary">Get a quote</Button>
                 </Toolbar>
-                <Menu anchorEl={anchorEl}
-                      open={Boolean(anchorEl)}
-                      onClose={handleClose}
-                      MenuListProps={{ onMouseLeave: handleClose }}>
-                    <Box sx={{ padding: 2 }}>
-                        <Grid container spacing={2}>
-                            {Object.keys(sections).map((section) => (
-                                <Grid item xs={12} sm={4} key={section}>
-                                    <Typography variant="subtitle1" gutterBottom color='primary'>{section}</Typography>
-                                    <Divider />
-                                    {sections[section].map((item) => (
-                                        <CustomMenuItem itemLabel={item} handleClose={handleClose} />
-                                    ))}
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </Box>
-                </Menu>
             </AppBar>
         </>
     );
@@ -120,7 +105,11 @@ export const CustomButton = (props) =>{
 
      return (
          <>
-             <Button color="primary" onClick={onClick}>{buttonLabel}</Button>
+             <Button color="secondary" onClick={onClick}>
+                 <Typography color='info'>
+                     {buttonLabel}
+                 </Typography>
+             </Button>
          </>
      )
 }
