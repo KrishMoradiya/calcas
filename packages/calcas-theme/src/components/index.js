@@ -1,3 +1,4 @@
+
 import { connect, Head } from 'frontity';
 import { ThemeProvider } from '@mui/material/styles';
 import customTheme from '../styles/themes/theme';
@@ -18,8 +19,11 @@ import '@fontsource/material-icons';
 import TypographyBlock from './common/typography_block/typographyblock';
 import Divider from './common/divider/Divider';
 import backgroundImage from '../assets/Rectangle65.png'
-import Navbar from './navbar-menu/Navbar';
+import {Navbar} from './navbar/Navbar';
 import items from './navbar-menu/menu-item';
+import CustomMenu from "./navbar-menu/Menu";
+import React from "react";
+import NavMenu from "./navbar-menu/NavMenu";
 
 function Root() {
   return (
@@ -30,7 +34,7 @@ function Root() {
         <html lang="en" />
       </Head>
       <ThemeProvider theme={customTheme}>
-        <Navbar items={items} />
+        <Navbar items={items}/>
       </ThemeProvider>
     </>
   );

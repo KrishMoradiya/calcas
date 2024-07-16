@@ -3,8 +3,7 @@ import {Menu,Box, Button, MenuItem, ThemeProvider, Typography, Paper, MenuList, 
 import { CustomButton} from "../button/CustomButton";
 import {MenuPropTypes,
 MenuDefaultProps} from "./MenuBar.propTypes";
-import NestedMenu from './NestedMenu';
-import { MenuOpen } from '@mui/icons-material';
+import './menu.css'
 
 const CustomMenu = (props) => {
     const {
@@ -34,17 +33,15 @@ const CustomMenu = (props) => {
 
     return (
         <>
-                <CustomButton
+            <CustomButton
                     color="primary"
                     fontColor="text"
                     fontFamily="Raleway"
-                    isMenuButton={true}
-                    isMenuListOpen={open}
                     title={menuItemList.label}
                     variant="text"
                     onClick={handleClick}
                 />
-                <Menu
+            <Menu
                     id="demo-positioned-menu"
                     aria-labelledby="demo-positioned-button"
                     anchorEl={anchorEl}
@@ -54,8 +51,8 @@ const CustomMenu = (props) => {
                     anchorOrigin={origin.anchor}
                     transformOrigin={origin.transform}
                 >
-                    {/*<NestedMenu item={menuItemList.children} />*/}
-                        
+                    <NestedMenu item={menuItemList.children} />
+
                         {
                             menuItemList.children.map((menuItem, index) => {
                                 console.log(menuItem);
@@ -68,7 +65,7 @@ const CustomMenu = (props) => {
                                     <div><CustomMenu menuItemList={menuItem} origin={{anchor:anchorOrigin,transform:transformOrigin}} key={index} /></div>
                             })
                         }
-                    </Menu>
+                </Menu>
 
         </>
     );

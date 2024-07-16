@@ -35,7 +35,8 @@
     "@mui/icons-material": "^5.16.0",
     "@mui/material": "^5.15.20",
     "calcas-theme": "file:packages/calcas-theme",
-    "frontity": "^1.17.2"
+    "frontity": "^1.17.2",
+    "react-router-dom": "^6.24.1"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",

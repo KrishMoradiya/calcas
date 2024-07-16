@@ -8,6 +8,7 @@ import ExpandMoreLess from '@mui/icons-material/ExpandLess';
 import PropTypes from "prop-types";
 import {CustomButtonPropTypes,
 CustomButtonDefaultProps} from "./Button.propsTypes";
+import { StyledButton, StyledTypography } from "./Button.style";
 
 export const CustomButton = ({title,color,variant,isMenuButton,isMenuListOpen,onClick,fontColor,fontFamily,paddingX,paddingY,fontWeight,fontStyle,fontSize,lineHeight}) => {
     let ariaHasPopup="true";
@@ -19,12 +20,12 @@ export const CustomButton = ({title,color,variant,isMenuButton,isMenuListOpen,on
     return (
         <>
             <ThemeProvider theme={customTheme}>
-                <Button variant={variant} color={color} id={id} aria-controls={ariaControls} aria-haspopup={ariaHasPopup} aria-expanded={ariaExpanded} onClick={onClick} sx={{px:paddingX,py:paddingY}}>
-                    <Typography color={fontColor} fontFamily={fontFamily} fontWeight={fontWeight} fontStyle={fontStyle} fontSize={fontSize} lineHeight={lineHeight}>
+                <StyledButton variant={variant} color={color} id={id} aria-controls={ariaControls} aria-haspopup={ariaHasPopup} aria-expanded={ariaExpanded} onClick={onClick} sx={{paddingX:paddingX,paddingY:paddingY}}>
+                    <StyledTypography color={fontColor} fontFamily={fontFamily} fontWeight={fontWeight} fontStyle={fontStyle} fontSize={fontSize} lineHeight={lineHeight}>
                         {title}
-                    </Typography>
+                    </StyledTypography>
                     {isMenuButton ? ((!isMenuListOpen)?<ExpandMoreIcon color={fontColor} fontSize='small' /> : <ExpandMoreLess color={fontColor} fontSize='small'/>):null}
-                </Button>
+                </StyledButton>
             </ThemeProvider>
         </>
     )

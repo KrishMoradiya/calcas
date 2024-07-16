@@ -6,6 +6,7 @@ import {NavbarPropTypes,
 NavbarMenuDefaultProps} from "./MenuBar.propTypes";
 import {Box, Container, Grid, Typography} from "@mui/material";
 import TypographyBlock from "../common/typography_block/typographyblock";
+import './menu.css'
 
 const Navbar = (props) => {
 

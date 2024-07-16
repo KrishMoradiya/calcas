@@ -1,5 +1,6 @@
 import {BookOutlined, HomeOutlined} from "@mui/icons-material";
 import React from 'react';
+import {ClaimExtraComponent} from "./Nav";
 
 const items = [
     {
@@ -104,6 +105,125 @@ const items = [
     },
     {
         label: "Claims",
+        key: "/",
+        icon: <BookOutlined/>,
+        children: [
+            {
+                label: "Claim 1",
+                key: "/auto",
+                icon: <HomeOutlined/>,
+                children: [
+                    {
+                        label:"claim 1",
+                        key: "/auto"
+                    },
+                    {
+                        label:"claim 2",
+                        key: "/motorcycle"
+                    },
+                    {
+                        label:"claim 3",
+                        key: "/classic-car"
+                    }
+                ]
+            },
+            {
+                label: "More",
+                key: "/more",
+                icon: <HomeOutlined/>,
+                children: [
+                    {
+                        label:"Umbrella",
+                        key: "/auto"
+                    },
+                    {
+                        label:"Pet",
+                        key: "/motorcycle"
+                    },
+                    {
+                        label:"Boat",
+                        key: "/classic-car"
+                    },
+                    {
+                        label:"Snow Mobile",
+                        key: "/rv"
+                    },
+                    {
+                        label:"Mexico watercraft",
+                        key: "/mexico-auto"
+                    },
+                    {
+                        label:"All Other",
+                        key: "/mexico-auto"
+                    },
+                ]
+            },
+            {
+                otherExtraComponents: [
+                    {Component:<ClaimExtraComponent />}
+                ]
+            }
+        ]
+    },
+    {
+        label: "Customer Care",
+        key: "/",
+        icon: <HomeOutlined/>,
+        children: [
+            {
+                label: "Claim 1",
+                key: "/auto",
+                icon: <HomeOutlined/>,
+                children: [
+                    {
+                        label:"claim 1",
+                        key: "/auto"
+                    },
+                    {
+                        label:"claim 2",
+                        key: "/motorcycle"
+                    },
+                    {
+                        label:"claim 3",
+                        key: "/classic-car"
+                    }
+                ]
+            },
+            {
+                label: "More",
+                key: "/more",
+                icon: <HomeOutlined/>,
+                children: [
+                    {
+                        label:"Umbrella",
+                        key: "/auto"
+                    },
+                    {
+                        label:"Pet",
+                        key: "/motorcycle"
+                    },
+                    {
+                        label:"Boat",
+                        key: "/classic-car"
+                    },
+                    {
+                        label:"Snow Mobile",
+                        key: "/rv"
+                    },
+                    {
+                        label:"Mexico watercraft",
+                        key: "/mexico-auto"
+                    },
+                    {
+                        label:"All Other",
+                        key: "/mexico-auto"
+                    },
+                ]
+            }
+        ]
+    },
+    {
+        label: "Resources",
         key: "/",
         icon: <BookOutlined/>,
         children: [
