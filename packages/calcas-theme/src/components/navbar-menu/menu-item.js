@@ -5,13 +5,13 @@ import {ClaimExtraComponent} from "./Nav";
 const items = [
     {
         label: "Insurance",
-        key: "/",
-        icon: <HomeOutlined/>,
+        key: "/insurance",
+        icon: <HomeOutlined color='primary'/>,
         children: [
             {
                 label: "Auto",
                 key: "/auto",
-                icon: <HomeOutlined/>,
+                icon: <HomeOutlined color='primary'/>,
                 children: [
                     {
                         label:"Auto",
@@ -38,7 +38,7 @@ const items = [
             {
                 label: "Property",
                 key: "/property",
-                icon: <BookOutlined/>,
+                icon: <BookOutlined color='primary'/>,
                 children: [
                     {
                         label:"Home",
@@ -73,7 +73,7 @@ const items = [
             {
                 label: "More",
                 key: "/more",
-                icon: <HomeOutlined/>,
+                icon: <HomeOutlined color='primary'/>,
                 children: [
                     {
                         label:"Umbrella",

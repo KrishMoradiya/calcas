@@ -1,14 +1,15 @@
 import { styled } from "@mui/material/styles";
 import {Box} from "@mui/material/Box";
 import { Menu } from "@mui/material";
-import { Height, HeightRounded, WidthFull, WidthFullRounded, WidthNormalRounded } from "@mui/icons-material";
+import { BorderBottom, Height, HeightRounded, Padding, WidthFull, WidthFullRounded, WidthNormalRounded } from "@mui/icons-material";
 
 export const StyledMenu = styled(Menu)(
   ({}) => ({
     marginTop: '15px',
+    width: '100%',
     '& .MuiPopover-paper':
-        { maxHeight:'max-content',maxWidth:'max-content',borderRadius:'16px' },
+        { maxHeight:'fit-content',maxWidth:'fit-content',borderRadius:'16px'},
     '& .MuiMenu-list':
-        {paddingTop:'0px',paddingBottom:'0px',borderRadius:4}
+        {paddingTop:'0px',paddingBottom:'0px',borderRadius:4,}
   }),
 );

@@ -3,7 +3,7 @@ import Navbar from 'calcas-theme/src/components/navbar-menu/Navbar';
 import items from '../../../packages/calcas-theme/src/components/navbar-menu/menu-item';
 
 export default {
-    title: 'Components/Navbar',
+    title: 'Components/NavbarOld',
     component: Navbar,
     tags: ['autodocs'],
     args: {
