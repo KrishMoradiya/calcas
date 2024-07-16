@@ -41,18 +41,18 @@ export const Navbar = (props) => {
     const [navItems,setNavItems] = useState(items);
     const [navItem, setNavItem] = useState({});
     const [anchorEl, setAnchorEl] = useState(null);
+    
 
     const handleMenuClick = (event,navItem) => {
         setAnchorEl(event.currentTarget);
         console.log(event.currentTarget);
-        alert("NavItem is: "+navItem)
         setNavItem(navItem);
         console.log(event.currentTarget + " and NavItem is: ",navItem);
         console.log("handleMenuHover")
     };
 
+
     const handleClose = () => {
-        console.log("remover Hover")
         setAnchorEl(null);
     };
 
@@ -61,19 +61,14 @@ export const Navbar = (props) => {
             <AppBar position="static" color="text">
                     <Toolbar>
                         <CalcasLogo />
-                        <Container sx={{width:'70%'}}>
-                            <Grid container sx={{display:'flex',justifyContent:'space-evenly'}}>
-                                <Grid item>
+                        <Container sx={{width:'60%',display:{xs:'none',sm:'flex'},justifyContent:'space-evenly',alignItems:'center'}}>
                                     <CustomButton
                                         paddingX={3}
                                         title="Get a quote"
                                     />
-                                </Grid>
-                                <NavbarSelectButton navItems={navItems} handleMenuClick={handleMenuClick} handleClose={handleClose} anchorEl={anchorEl}/>
-                            </Grid>
+                                <NavbarSelectButton navItems={navItems} handleMenuClick={handleMenuClick} anchorEl={anchorEl}/>
+                        
                         </Container>
-                        {/* <Container sx={{display:{xs:'none',sm:'flex'}}}>     */}
-                        {/* </Container> */}
                             
                     </Toolbar>
                 <Container>
@@ -88,8 +83,8 @@ export const NavbarSelectButton = (props) => {
     const {
         navItems,
         handleMenuClick,
-        handleClose,
-        anchorEl
+        anchorEl,
+        handleClose
     } = props;
 
     return (
@@ -98,8 +93,8 @@ export const NavbarSelectButton = (props) => {
                     navItems.length > 0 && navItems.map((navItem, index) => {
                         return (
                             (navItem.children === undefined)
-                                ? <MenuButton buttonLabel={navItem.label} key={index} href={navItem.key}/>
-                                : <MenuButton buttonLabel={navItem.label} onMouseEnter={(e)=>{handleMenuClick(e,navItem)}} onMouseLeave={(e)=>{handleClose()}} href={navItem.key} anchorEl={anchorEl} target={(e)=> {return e.currentTarget}}/>
+                                ? <MenuButton buttonLabel={navItem.label} key={index} href={navItem.key} />
+                                : <MenuButton buttonLabel={navItem.label} onMouseEnter={(e)=>{handleMenuClick(e,navItem)}} href={navItem.key} />
                         )
                     })
                 }
@@ -114,15 +109,19 @@ export const MenuButton = (props) =>{
     } = props;
 
     return (
-        <Grid item sx={{display:'flex',alignItems:'center'}}>
+        // <Grid item sx={{display:'flex',alignItems:'center'}}>
             <Link href={href} color="secondary" 
                 onMouseEnter={onMouseEnter}
+                sx={{marginX: '5px'}}
             >
-                <Typography color='info'>
-                    {buttonLabel}
-                </Typography>
+                <TypographyBlock
+                paragraphChildren={buttonLabel}
+                paragraphColor="text.secondary"
+                paragraphFontFamily="Raleway"
+                paragraphVariant="body2"
+                />
             </Link>
-        </Grid>
+        // </Grid>
     )
 }
 
@@ -202,14 +201,6 @@ export const CustomMenu = (props) => {
 
                                                 </Box>
                                             </Box>
-
-                                            {/* <Typography variant="subtitle1" gutterBottom color='primary'>{menuSection.label}</Typography>
-                                            <Divider />
-                                            {
-                                                menuSection.children && menuSection.children.map((menuSectionItem, index) => {
-                                                    return <CustomMenuItem itemLabel={menuSectionItem.label} handleClose={handleClose} key={index} />
-                                                })
-                                            } */}
                                         </Grid> : <>{
                                             menuSection.otherExtraComponents.map((otherComponent,subIndex)=>{
                                                 return <Grid item xs={12} key={index} sm={4} >
