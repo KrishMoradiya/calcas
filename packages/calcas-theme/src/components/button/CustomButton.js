@@ -10,7 +10,7 @@ import {CustomButtonPropTypes,
 CustomButtonDefaultProps} from "./Button.propsTypes";
 import { StyledButton, StyledTypography } from "./Button.style";
 
-export const CustomButton = ({title,color,variant,isMenuButton,isMenuListOpen,onClick,fontColor,fontFamily,paddingX,paddingY,fontWeight,fontStyle,fontSize,lineHeight}) => {
+export const CustomButton = ({title,color,variant,isMenuButton,isMenuListOpen,handleMenuClose,onClick,fontColor,fontFamily,paddingX,paddingY,fontWeight,fontStyle,fontSize,lineHeight}) => {
     let ariaHasPopup="true";
     let id="demo-positioned-button";
 
@@ -20,7 +20,7 @@ export const CustomButton = ({title,color,variant,isMenuButton,isMenuListOpen,on
     return (
         <>
             <ThemeProvider theme={customTheme}>
-                <StyledButton variant={variant} color={color} id={id} aria-controls={ariaControls} aria-haspopup={ariaHasPopup} aria-expanded={ariaExpanded} onClick={onClick} sx={{paddingX:paddingX,paddingY:paddingY}}>
+                <StyledButton variant={variant} color={color} id={id} aria-controls={ariaControls} aria-haspopup={ariaHasPopup} aria-expanded={ariaExpanded} onClick={onClick} sx={{paddingX:paddingX,paddingY:paddingY}} onMouseEnter={handleMenuClose}>
                     <StyledTypography color={fontColor} fontFamily={fontFamily} fontWeight={fontWeight} fontStyle={fontStyle} fontSize={fontSize} lineHeight={lineHeight}>
                         {title}
                     </StyledTypography>

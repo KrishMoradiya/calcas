@@ -1,6 +1,7 @@
 import {BookOutlined, HomeOutlined} from "@mui/icons-material";
 import React from 'react';
-import {ClaimExtraComponent} from "./Nav";
+import {ClaimExtraComponent} from "../navbar/Navbar";
+
 
 const items = [
     {

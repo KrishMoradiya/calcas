@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {MenuButton} from "calcas-theme/src/components/navbar/Navbar";
 
 export default {

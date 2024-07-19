@@ -20,8 +20,8 @@ export default {
         paddingY: {control: 'number'},
         fontWeight: {control:'select',options: [100,200,300,400,500,600,700,800]},
         fontStyle: 'normal',
-        fontSize: {control:'select',options: ['10px','11px','12px','13px','14px','15px','16px','17px','18px','19px','20px','21px']},
-        lineHeight: {control:'select',options: ['10px','11px','12px','13px','14px','15px','16px','17px','18px','19px','20px','21px','22px','23px','24px']},
+        fontSize: {control:'select',options: [9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]},
+        lineHeight: {control:'select',options: [9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]},
     },
     args: {
         title: 'Click Here',

@@ -47,4 +47,3 @@ export const CustomButtonDefaultProps = {
     fontSize: '20px',
     lineHeight: '23px'
 }
-

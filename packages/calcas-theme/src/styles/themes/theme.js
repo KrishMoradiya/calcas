@@ -20,9 +20,10 @@ const customTheme = createTheme({
     fontFamily: 'Roboto, Raleway',
     fontSize: 16,
     button:{
-      textTransform:'none'
+      textTransform: 'none'
     }
   },
+
 });
 
 export default responsiveFontSizes(customTheme);

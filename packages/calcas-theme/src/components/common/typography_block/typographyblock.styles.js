@@ -9,4 +9,5 @@ export const StyledHeader = styled(Typography)(({ fontFamily, color }) => ({
 export const StyledParagraph = styled(Typography)(({ fontFamily, color }) => ({
   fontFamily: fontFamily || 'Roboto',
   ...(color && color.startsWith('#') ? { color: color } : {}),
+  fontSize:{xs:8,sm:10,md:12}
 }));
